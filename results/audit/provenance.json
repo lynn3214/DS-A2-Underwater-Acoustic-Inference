@@ -1,0 +1,38 @@
+{
+  "retrieval_time_utc": "2026-10-10T08:24:32Z",
+  "doi": "https://doi.org/10.25921/yyt5-g930",
+  "official_landing_page": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncei.pad:NOAA-Navy-SanctSound_SB02_13_BB_1h",
+  "official_bucket_listing": "https://storage.googleapis.com/noaa-passive-bioacoustic/?prefix=sanctsound/products/sound_level_metrics/sb02/sanctsound_sb02_13_bb_1h/",
+  "bucket_object_prefix": "gs://noaa-passive-bioacoustic/sanctsound/products/sound_level_metrics/sb02/sanctsound_sb02_13_bb_1h/",
+  "objects": [
+    {
+      "url": "https://storage.googleapis.com/noaa-passive-bioacoustic/sanctsound/products/sound_level_metrics/sb02/sanctsound_sb02_13_bb_1h/data/SanctSound_SB02_13_BB_1h.csv",
+      "local_path": "data/raw/SanctSound_SB02_13_BB_1h.csv",
+      "size_bytes": 57449,
+      "sha256": "678ccabf720dfb1880b2d5975dee417dda118c66929f0e8d000dc9043c4d1cb2",
+      "gcs_generation": "1668860866576900",
+      "gcs_last_modified_utc": "2022-11-19T12:27:46.605Z",
+      "gcs_etag": "89905bbc1c09c0b87681b3b153a502cf"
+    },
+    {
+      "url": "https://storage.googleapis.com/noaa-passive-bioacoustic/sanctsound/products/sound_level_metrics/sb02/sanctsound_sb02_13_bb_1h/metadata/NOAA-Navy-SanctSound_SB02_13_BB_1h.xml",
+      "local_path": "data/raw/NOAA-Navy-SanctSound_SB02_13_BB_1h.xml",
+      "size_bytes": 71616,
+      "sha256": "06ce0cdb932a3c8665b584114ebb3be7be53bcf23408831b178af4cb32ee4f79",
+      "gcs_generation": "1668860889008474",
+      "gcs_last_modified_utc": "2022-11-19T12:28:09.037Z",
+      "gcs_etag": "a88f56373dafc150354b9314a8c5b491"
+    },
+    {
+      "url": "https://storage.googleapis.com/noaa-passive-bioacoustic/sanctsound/products/sound_level_metrics/sb02/sanctsound_sb02_13_bb_1h/metadata/SanctSound_SB02_13_BB_1h-metadata.json",
+      "local_path": "data/raw/SanctSound_SB02_13_BB_1h-metadata.json",
+      "size_bytes": 1199,
+      "sha256": "ccb2920315a9c2200e0ba41f2d7563ffeda0dd947966d82cf2891225c53e4efc",
+      "gcs_generation": "1668860912846341",
+      "gcs_last_modified_utc": "2022-11-19T12:28:32.875Z",
+      "gcs_etag": "0f15fdce1abb11e7880b30615d75e9b6"
+    }
+  ],
+  "license_note": "The NOAA landing record supplies attribution and liability terms but no explicit open license or redistribution grant was verified. Raw files remain local and Git-ignored; redistribution clearance is unresolved.",
+  "reacquisition_note": "Re-download the exact public bucket objects from the URLs above and verify SHA-256. The bucket listing exposed GCS generations and ETags; ordinary object URLs may serve a changed object if NOAA replaces it."
+}
