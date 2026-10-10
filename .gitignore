@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+data/raw/*
+!data/raw/README.md
+results/audit/figures/

@@ -1,0 +1,92 @@
+phase: 0
+status: frozen_before_data_access
+candidate:
+  source: NOAA SanctSound
+  doi: https://doi.org/10.25921/yyt5-g930
+  site: Stellwagen Bank
+  station_deployment: SB02_13
+  product: hourly broadband sound-pressure-level indicators
+  immutable_source_strategy: Preserve the downloaded processed source unchanged when licensing and size permit; otherwise retain official acquisition URL, retrieval UTC, filename, byte size, SHA-256, metadata snapshot, and documented reacquisition steps. Never download raw audio for this audit.
+  provenance_validation:
+    - Resolve DOI and follow only official NOAA landing and download links.
+    - Verify station/deployment identifiers and observation dates against official metadata.
+    - Record product definition, frequency band, units, aggregation and timestamp semantics.
+    - Record QC flags and official filtering rules; do not invent undocumented rules.
+    - Record license/redistribution terms and explicitly flag uncertainty.
+    - Record exact source URLs, filenames, retrieval time, file sizes, and SHA-256 hashes.
+windows:
+  timezone: confirmed_local_station_timezone_required
+  timestamp_semantics: confirm_interval_start_end_or_center_before_windowing
+  day:
+    start: "09:00"
+    end_exclusive: "17:00"
+    hours: 8
+  night:
+    start: "21:00"
+    end_exclusive_next_day: "05:00"
+    hours: 8
+    assign_to: starting_local_calendar_date
+  pairing: Pair the day window and night window that start on the same local calendar date.
+  ambiguity_handling: If timezone, DST, or timestamp bin semantics cannot be established, do not construct pairs; report an unresolved blocker.
+eligibility:
+  main_min_valid_hours_each_window: 6
+  hours_per_window: 8
+  coverage_only_sensitivity_min_valid_hours_each_window: 8
+  paired_date_screening_target: 30
+  target_interpretation: Practical screening threshold, not a guarantee of valid inference.
+  deployment_boundary: Exclude dates that fail the predeclared per-window completeness rule; count and report boundary losses.
+  gaps: Treat missing/ineligible dates as run breaks; report all eligible-run lengths and the longest run.
+  qc_missingness: Apply only official documented validity/QC rules; report flag counts and missingness by date/hour.
+selection:
+  outcome_blind: true
+  prohibited: Do not calculate, plot, summarize, or select on day-night differences, effect estimates, intervals, p-values, significance, or visually promising contrasts during Phase 0.
+  fallback_if_under_target_or_quality_failure:
+    - Search official metadata for another compatible deployment at the same site.
+    - Then search for a compatible SanctSound site.
+    - Compare only coverage, measurement compatibility, timestamps, QC, and provenance.
+    - Require human approval before changing the primary dataset.
+diagnostics:
+  allowed:
+    - Input schema and parse success
+    - Units, timestamp representation, duplicates, monotonicity, cadence
+    - Gross invalid values and documented QC counts
+    - Deployment date coverage and valid-hour counts by local date/hour
+    - Day/night completeness counts without comparing SPL magnitudes
+    - Eligible-date counts at 6/8 and 8/8, exclusions, and boundary losses
+    - Missingness and contiguous eligible-date runs
+    - Overall marginal hourly SPL distribution and flagged potential outliers
+    - Overall hourly-series dependence only with regular cadence and explicit gap handling
+  prohibited:
+    - Any observed paired daily difference or day/night outcome comparison
+    - Any effect estimate, confidence interval, p-value, significance claim, or power
+future_methods_not_executed:
+  sigma0: sample standard deviation (ddof=1) of eligible daily paired differences, only after authorization; marginal scale, not long-run SD or IID SE justification
+  moving_block_bootstrap: proposed block length ceil(n**(1/3)); review after audit and validate by simulation before use
+  hac: bandwidth and finite-sample convention must be frozen before outcome analysis
+  monte_carlo: design and seeds must be frozen before outcome analysis
+  all_future_methods_status: proposed_only
+research_design:
+  question: For the specified station/deployment and clock-defined windows, what is the average within-date night-minus-day difference in hourly broadband SPL (dB), and how uncertain is the estimate?
+  interpretation: Observational contrast; no causal attribution or unsupported external generalization.
+  statistic: Arithmetic mean of published hourly dB indicators in each window, then night minus day; not a linear acoustic-energy mean.
+  estimand: Expected within-date difference for the specified station/period and eligible observational process.
+  hypotheses: H0 Delta = 0; two-sided H1 Delta != 0.
+  alpha: 0.05
+  interval_level: 0.95
+meaningful_effect:
+  delta_min_db: 3
+  status: provisional; researcher approval and rationale required before confirmatory analysis
+  interpretation_sensitivity_db: [1, 3]
+  acoustic_consensus_claim: prohibited_without_authoritative_source
+decision_rationales:
+  clock_windows: Fixed, equal-duration windows define the intended operational contrast before observing outcomes.
+  six_of_eight: Allows limited missingness while retaining most hourly bins; it is a screening rule, not a validity theorem.
+  eight_of_eight: Strict coverage-only sensitivity diagnostic.
+  thirty_dates: Practical screening threshold for assessing feasibility, not an inferential guarantee.
+  contiguous_runs: Dependence diagnostics and block methods require respecting temporal gaps.
+  outcome_blind_selection: Prevents outcome-driven dataset substitution during feasibility assessment.
+  three_db: Provisional interpretation threshold only; no consensus or energy interpretation is asserted.
+provisional_decisions:
+  - Whether 3 dB is a substantively justified minimum meaningful effect.
+  - Whether any alternative deployment is acceptable if the primary fails screening.
+  - HAC bandwidth, MBB rule, and simulation design for Phase 1.
