@@ -1,0 +1,95 @@
+protocol_version: 1
+phase: 1
+status: frozen_before_outcome_analysis
+project: "Day-Night Variability in Underwater Sound Levels: Statistical Inference, Power, and Temporal Dependence"
+data:
+  doi: "https://doi.org/10.25921/yyt5-g930"
+  product: "NOAA SanctSound SB02_13_BB_1h"
+  input: "data/raw/SanctSound_SB02_13_BB_1h.csv"
+  provenance: "results/audit/provenance.json"
+  source_checksum_sha256: "678ccabf720dfb1880b2d5975dee417dda118c66929f0e8d000dc9043c4d1cb2"
+  input_variable: "BB_10-24000"
+  input_units: "dB re 1 uPa (source processing metadata)"
+  timestamp_labels: "start of one-hour bin; direct netCDF time and time_stamp comments"
+  timestamp_timezone: UTC
+  analysis_timezone: America/New_York
+  frequency_band_operational_label: "10-24000 Hz, pending resolution of conflicting product JSON"
+  qc: "No row-level QC column; no undocumented filtering or interpolation"
+research:
+  question: "During the observed deployment at NOAA SanctSound SB02_13, is the average nighttime underwater sound-level indicator different from the average daytime indicator, and how uncertain is that difference?"
+  inferential_scope: "Eligible clock-defined dates in this single observed station deployment and its observational process; no causal or broad site/year generalization."
+  sampling_unit: "local calendar date with both day and night windows meeting coverage"
+  estimand: "Expected within-date night-minus-day difference in arithmetic means of published hourly dB indicators, over the eligible observation process."
+  statistic: "mean(D_d), where D_d = mean(night hourly dB) - mean(day hourly dB)"
+  dB_averaging_caveat: "Arithmetic averaging of published dB indicators is not averaging linear acoustic energy."
+  day_window: {start: "09:00", end_exclusive: "17:00", expected_bins: 8}
+  night_window: {start: "21:00", end_exclusive: "05:00 next local date", expected_bins: 8, assign_date: start_date}
+  primary_coverage: "At least 6 valid hourly indicators in each window"
+  coverage_sensitivity: "All 8 hourly indicators in each window"
+  hypotheses: {null: "Delta = 0 dB", alternative: "Delta != 0 dB", two_sided_alpha: 0.05}
+  operational_minimum_meaningful_effect_db: 3.0
+  secondary_interpretation_threshold_db: 1.0
+  threshold_note: "User-authorized operational interpretation thresholds, not universal NOAA/ecological standards or a claim of energy doubling; compare estimate and intervals without treating thresholds as null hypotheses."
+analysis:
+  descriptive: [n, mean, median, sample_sd_ddof1, standard_error, minimum, maximum]
+  iid:
+    method: "one-sample Student t interval and two-sided t test, df=n-1"
+    assumptions: "Independent identically distributed daily differences with finite variance; Gaussianity supports exact small-sample t calibration."
+  hac:
+    method: "intercept-only Newey-West HAC with Bartlett kernel"
+    bandwidth_rule: "floor(4*(n/100)^(2/9)); n=64 gives max lag 3; max lag is truncated at n-1"
+    finite_sample_correction: "n/(n-1) scalar on covariance"
+    reference: "two-sided Student t with n-1 degrees of freedom; asymptotic HAC approximation, not guaranteed calibrated at n=64"
+  moving_block_bootstrap:
+    method: "overlapping non-circular moving blocks, sampled uniformly with replacement; concatenate and truncate to n"
+    primary_block_length: "ceil(n^(1/3)); n=64 gives 4"
+    confidence_interval: "95% percentile interval using the 2.5th and 97.5th percentiles of bootstrap replicate means"
+    null_test: "Two-sided percentile bootstrap CI exclusion of zero, equivalent to the stated interval decision; no bootstrap p-value"
+    replications: 1999
+    sensitivity_block_lengths: [2, 4, 8]
+simulations:
+  rng: "numpy.random.default_rng"
+  seed_root: 20261012
+  iid_sampling_distribution:
+    replications_per_condition: 5000
+    n_values: [20, 30, 64]
+    effects_db: [0.0, 3.0]
+    sigma: "sample SD ddof=1 of eligible primary daily differences, calibrated only after freezing protocol"
+  iid_power:
+    replications_per_scenario: 5000
+    alpha: 0.05
+    n_values: [10, 20, 30, 40, 60]
+    sigma_multipliers: [0.5, 1.0, 1.5, 2.0]
+    effect_values_db: [0.0, 1.0, 2.0, 3.0, 4.0, 5.0]
+    design: "one-factor-at-a-time around n=30, sigma=sigma0, and effect=3 dB; analytical noncentral-t power for every displayed scenario"
+    monte_carlo_interval: "Wilson 95% interval for each rejection proportion"
+  ar1_counterexample:
+    process: "Stationary Gaussian AR(1): eps_0~N(0,sigma^2); eps_t=rho*eps_(t-1)+u_t; u_t~N(0,sigma^2*(1-rho^2)); D_t=Delta+eps_t"
+    rho_values: [0.0, 0.3, 0.6, 0.9]
+    primary_rho: 0.6
+    stress_rho: 0.9
+    n: 64
+    sigma: "empirical calibration sigma0 defined above"
+    effects_db: [0.0, 3.0]
+    replications_per_condition: 2000
+    bootstrap_replications_per_series: 999
+    methods: [iid_t, hac, moving_block_bootstrap]
+    metrics: [type_i_error_at_zero, coverage_at_zero, mean_interval_width, rejection_rate_at_3db]
+    monte_carlo_interval: "Wilson 95% interval for rates; empirical percentile uncertainty only where explicitly saved"
+    interpretation: "rho is controlled simulation truth and is not inferred from the real-data ACF."
+  dependence_diagnostics:
+    acf_lags: [1, 2, 3, 7, 14]
+    confidence_bands: "Descriptive approximate white-noise bands only; not universal coefficient-wise CIs."
+    lag_policy: "Do not bridge missing eligible dates; primary eligible dates are checked against the audit's contiguous run."
+reporting:
+  alpha: 0.05
+  confidence_level: 0.95
+  no_causal_claims: true
+  separate_observed_and_simulated_results: true
+  retain_failures_and_negative_results: true
+  no_platform_submission: true
+reproducibility:
+  python_environment: nussem1
+  notebook: notebook/DS_A2_inference_uncertainty.ipynb
+  raw_results: results/raw/
+  figures: results/figures/

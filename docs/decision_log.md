@@ -1,5 +1,13 @@
 # Decision Log
 
+## 2026-10-12 — Freeze Phase 1 analysis design before outcome analysis
+
+- Status: prospective, frozen before calculating observed paired differences.
+- Decisions: user-authorized operational thresholds 3 dB primary and 1 dB sensitivity; two-sided alpha .05; one-sample t baseline; Newey-West Bartlett HAC with frozen bandwidth and correction; percentile MBB with frozen block selection and sensitivity; fixed IID and AR(1) simulation grids, replication counts, seeds, and decision rules. Full details are in `config/experiment_protocol.yaml` and `docs/analysis_plan.md`.
+- Rationale: satisfy the Phase 1 task while avoiding outcome-informed methodological choices. The threshold choices are operational interpretations, not universal acoustic standards.
+- Related commit: to be filled after commit succeeds.
+- No NOAA day/night difference has been calculated as of this design record.
+
 ## 2026-10-10 — Freeze Phase 0 audit protocol before NOAA access
 
 - Status: prospective decisions, not informed by dataset outcomes.
