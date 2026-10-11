@@ -1,0 +1,61 @@
+{
+  "retrieved_utc": "2026-10-12",
+  "assessment": "Timestamp convention resolved by direct evidence. Frequency-band metadata conflict remains unresolved. Exact dataset redistribution terms were found in its own netCDF file.",
+  "direct_product_specific_evidence": [
+    {
+      "source": "SB02_13_BB_1h netCDF distributed by NOAA's public bucket",
+      "url": "https://storage.googleapis.com/noaa-passive-bioacoustic/sanctsound/products/sound_level_metrics/sb02/sanctsound_sb02_13_bb_1h/data/SanctSound_SB02_13_BB_1h.nc",
+      "local_snapshot": "data/raw/SanctSound_SB02_13_BB_1h.nc",
+      "sha256": "6f9f0211a98f415cd2c26526ec7bae9788bc3401b5ad707b7a9a7882609fba03",
+      "verified_attributes": {
+        "time.comment": "Start time of 1 hour bin over which sound pressure levels are calculated",
+        "time_stamp.comment": "Start time of 1 hour bin over which sound pressure levels are calculated",
+        "time_stamp.actual_range": ["2020-11-22T17:00:00:000Z", "2021-01-26T16:00:00:000Z"],
+        "global_doi": "http://doi.org/10.25921/yyt5-g930",
+        "global_license": "The data may be used and redistributed for free but are not intended for legal use, since it may contain inaccuracies. Neither the data creator, NOAA, nor the United States Government, nor any of their employees or contractors, makes any warranty, express or implied, including warranties of merchantability and fitness for a particular purpose, or assumes any legal liability for the accuracy, completeness, or usefulness of this information.",
+        "global_abstract_band": "10 to 24,000 Hz",
+        "global_history_band": "10 to 24,000 Hz",
+        "sound_pressure_levels.units": "dB"
+      },
+      "evidence_class": "direct, high confidence"
+    },
+    {
+      "source": "NOAA NCEI SB02_13 landing metadata and its official processing description",
+      "url": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncei.pad:NOAA-Navy-SanctSound_SB02_13_BB_1h",
+      "evidence": "Describes integration over 10 to 24,000 Hz, hourly median from at least 1,800 one-second values, and output in dB re 1 µPa; does not define the timestamp label convention.",
+      "evidence_class": "direct product-specific for processing and band; silent on timestamp labels"
+    },
+    {
+      "source": "Exact SB02_13 brief metadata JSON",
+      "url": "https://storage.googleapis.com/noaa-passive-bioacoustic/sanctsound/products/sound_level_metrics/sb02/sanctsound_sb02_13_bb_1h/metadata/SanctSound_SB02_13_BB_1h-metadata.json",
+      "evidence": "DATA_QUALITY field says Frequency (Hz): 20 to 24000.",
+      "evidence_class": "direct product-specific; conflicts with product netCDF, NCEI landing metadata, and variable naming"
+    }
+  ],
+  "related_product_evidence_indirect_only": [
+    {
+      "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/noaaSanctSound_MB02_04_BB_1h.html",
+      "evidence": "time.comment says Start time of 1 hour bin over which sound pressure levels are calculated.",
+      "evidence_class": "related broadband product; corroboration only, not used to establish SB02_13 semantics"
+    },
+    {
+      "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/noaaSanctSound_SB02_15_PSD_1h.graph",
+      "evidence": "time.comment says Start times of 1-hour bins over which sound pressure levels are calculated.",
+      "evidence_class": "related Stellwagen PSD product; corroboration only, not used to establish SB02_13 semantics"
+    }
+  ],
+  "direct_erddap_access_attempt": {
+    "url": "https://coastwatch.pfeg.noaa.gov/erddap/griddap/noaaSanctSound_SB02_13_BB_1h.das",
+    "retrieved_utc_date": "2026-10-12",
+    "http_status": 403,
+    "response": "Access Forbidden: Access Forbidden -- Your IP address is on this ERDDAP's request blacklist.",
+    "interpretation": "Direct ERDDAP metadata could not be retrieved from this environment. This access error is not evidence that the dataset lacks an ERDDAP record."
+  },
+  "time_zone_and_dst": {
+    "zone": "America/New_York",
+    "basis": "Specified by the user for this audit and consistent with NOAA's Stellwagen Bank coordinates.",
+    "dataset_period": "2020-11-22 to 2021-01-26",
+    "dst_transition_within_observation_period": false,
+    "dst_tests": "Synthetic tests exercise spring-forward gap and fall-back fold using zoneinfo-aware UTC conversion."
+  }
+}

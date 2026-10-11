@@ -15,3 +15,13 @@
 - Consequence: no clock-window completeness or eligibility calculation was permitted. The initial protocol remains unchanged; no fallback dataset was selected.
 - Related protocol commit: `aa4394b8474e24798096592870d0c22a1e52e00c`.
 - Audit evidence: `results/audit/noaa_audit.json`, `results/audit/provenance.json`, and `docs/audit_report.md`.
+
+## 2026-10-12 17:43 UTC — Phase 0.5 metadata resolution
+
+- Status: prospective metadata interpretation; no effect outcomes examined.
+- Direct source evidence: SB02_13 netCDF `time` and `time_stamp` comments specify start times for one-hour bins. Adopt `start` with high confidence.
+- User specification: use `America/New_York`; preserve existing day/night windows and coverage criteria. Add a separate Phase 0.5 config so the frozen Phase 0 protocol remains intact.
+- License resolution: exact product netCDF global license states free use and redistribution with a no-warranty/legal-use disclaimer. The small processed product and metadata snapshots may therefore be versioned; raw audio remains excluded.
+- Unresolved: exact product brief JSON says 20–24,000 Hz, while the NCEI processing record and netCDF abstract/history say 10–24,000 Hz. Retain the discrepancy and require NOAA clarification.
+- Related commit: this record and its evidence are included in the Phase 0.5 metadata-resolution commit; the exact SHA is reported in the final handoff.
+- Evidence: `docs/metadata_resolution.md`, `results/audit/metadata_evidence.json`, and the updated `results/audit/noaa_audit.json`.

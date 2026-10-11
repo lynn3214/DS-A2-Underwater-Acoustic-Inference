@@ -1,16 +1,56 @@
 {
+  "phase": 0.5,
   "audit_status": "completed_non_outcome_diagnostics",
-  "generated_utc": "2026-10-10T08:27:31.994941+00:00",
+  "generated_utc": "2026-10-11T17:46:03.385888+00:00",
   "protocol": {
     "station_deployment": "SB02_13",
-    "timestamp_semantics_confirmed": false,
-    "window_eligibility_computed": false,
-    "window_eligibility_reason": "Timestamp labels are whole-hour UTC timestamps, but the official metadata does not define whether they label interval starts, ends, or centers."
+    "timestamp_semantics_confirmed": true,
+    "timestamp_semantics": "start",
+    "timestamp_semantics_confidence": "high",
+    "timezone": "America/New_York",
+    "window_eligibility_computed": true,
+    "window_eligibility_reason": null
   },
   "input": {
     "relative_path": "data/raw/SanctSound_SB02_13_BB_1h.csv",
     "size_bytes": 57449,
     "sha256": "678ccabf720dfb1880b2d5975dee417dda118c66929f0e8d000dc9043c4d1cb2"
+  },
+  "direct_product_metadata": {
+    "available": true,
+    "relative_path": "data/raw/SanctSound_SB02_13_BB_1h.nc",
+    "size_bytes": 132286,
+    "sha256": "6f9f0211a98f415cd2c26526ec7bae9788bc3401b5ad707b7a9a7882609fba03",
+    "global_doi": "http://doi.org/10.25921/yyt5-g930",
+    "global_title": "NOAA-Navy Sanctuary Soundscape Monitoring Project, Broadband Sound Pressure Levels, Stellwagen Bank, SanctSound_SB02_13_BB_1h",
+    "global_license": "The data may be used and redistributed for free but are not intended for legal use, since it may contain inaccuracies. Neither the data creator, NOAA, nor the United States Government, nor any of their employees or contractors, makes any warranty, express or implied, including warranties of merchantability and fitness for a particular purpose, or assumes any legal liability for the accuracy, completeness, or usefulness, of this information.",
+    "global_abstract": [
+      "This record represents the broadband (BB) sound pressure levels (SPLs) derived from raw passive acoustic data. BB SPLs were calculated by integration of sound pressure spectral density estimates of the mean-square pressure with a 1 Hz/1 second resolution over the frequency band of 10 to 24,000 Hz. The result is then calculated per hour as a median over no less than 1,800 1-second values for that hour and converted to decibels (dB re 1 \u00b5Pa). These data were recorded at SanctSound Site SB02_13 between November 22, 2020 and January 26, 2021."
+    ],
+    "time_attributes": {
+      "comment": "Start time of 1 hour bin over which sound pressure levels are calculated",
+      "units": "seconds since 1970-01-01T00:00:00Z",
+      "actual_range": [
+        1606064400,
+        1611676800
+      ]
+    },
+    "time_stamp_attributes": {
+      "comment": "Start time of 1 hour bin over which sound pressure levels are calculated",
+      "units": "seconds",
+      "actual_range": [
+        "2020-11-22T17:00:00:000Z",
+        "2021-01-26T16:00:00:000Z"
+      ]
+    },
+    "sound_pressure_levels_attributes": {
+      "units": "dB",
+      "comment": "Broadband Sound Pressure Levels",
+      "actual_range": [
+        87.726289,
+        117.738856
+      ]
+    }
   },
   "schema_and_time": {
     "header": [
@@ -126,6 +166,11 @@
       "2021-01-26": 17
     },
     "non_hour_aligned_timestamps": 0,
+    "local_timezone_utc_offsets_hours": [
+      -5.0
+    ],
+    "local_timezone_offset_transitions": 0,
+    "observations_during_daylight_time": 0,
     "hourly_gaps": 0,
     "longest_consecutive_hourly_run": 1560,
     "hourly_lag1_correlation_within_adjacent_rows_only": 0.7416343634616174,
@@ -146,8 +191,1011 @@
     "official_metadata_has_quantitative_qc_rule": false,
     "metadata_description": "Quality described as assessed by visual analysis and acoustic levels over time; no row-level QC flags or quantitative filtering rule documented."
   },
+  "coverage": {
+    "timezone": "America/New_York",
+    "timestamp_semantics": "start",
+    "validity_rule": "Finite values at unique timestamp labels; no undocumented numeric or QC filter applied.",
+    "date_count_screened": 66,
+    "eligible_date_count_6_of_8": 64,
+    "eligible_date_count_8_of_8": 64,
+    "target_minimum_dates": 30,
+    "target_met_6_of_8": true,
+    "target_met_8_of_8": true,
+    "eligible_6_of_8_dates": [
+      "2020-11-23",
+      "2020-11-24",
+      "2020-11-25",
+      "2020-11-26",
+      "2020-11-27",
+      "2020-11-28",
+      "2020-11-29",
+      "2020-11-30",
+      "2020-12-01",
+      "2020-12-02",
+      "2020-12-03",
+      "2020-12-04",
+      "2020-12-05",
+      "2020-12-06",
+      "2020-12-07",
+      "2020-12-08",
+      "2020-12-09",
+      "2020-12-10",
+      "2020-12-11",
+      "2020-12-12",
+      "2020-12-13",
+      "2020-12-14",
+      "2020-12-15",
+      "2020-12-16",
+      "2020-12-17",
+      "2020-12-18",
+      "2020-12-19",
+      "2020-12-20",
+      "2020-12-21",
+      "2020-12-22",
+      "2020-12-23",
+      "2020-12-24",
+      "2020-12-25",
+      "2020-12-26",
+      "2020-12-27",
+      "2020-12-28",
+      "2020-12-29",
+      "2020-12-30",
+      "2020-12-31",
+      "2021-01-01",
+      "2021-01-02",
+      "2021-01-03",
+      "2021-01-04",
+      "2021-01-05",
+      "2021-01-06",
+      "2021-01-07",
+      "2021-01-08",
+      "2021-01-09",
+      "2021-01-10",
+      "2021-01-11",
+      "2021-01-12",
+      "2021-01-13",
+      "2021-01-14",
+      "2021-01-15",
+      "2021-01-16",
+      "2021-01-17",
+      "2021-01-18",
+      "2021-01-19",
+      "2021-01-20",
+      "2021-01-21",
+      "2021-01-22",
+      "2021-01-23",
+      "2021-01-24",
+      "2021-01-25"
+    ],
+    "eligible_6_of_8_run_lengths": [
+      64
+    ],
+    "eligible_6_of_8_longest_run": 64,
+    "eligible_8_of_8_dates": [
+      "2020-11-23",
+      "2020-11-24",
+      "2020-11-25",
+      "2020-11-26",
+      "2020-11-27",
+      "2020-11-28",
+      "2020-11-29",
+      "2020-11-30",
+      "2020-12-01",
+      "2020-12-02",
+      "2020-12-03",
+      "2020-12-04",
+      "2020-12-05",
+      "2020-12-06",
+      "2020-12-07",
+      "2020-12-08",
+      "2020-12-09",
+      "2020-12-10",
+      "2020-12-11",
+      "2020-12-12",
+      "2020-12-13",
+      "2020-12-14",
+      "2020-12-15",
+      "2020-12-16",
+      "2020-12-17",
+      "2020-12-18",
+      "2020-12-19",
+      "2020-12-20",
+      "2020-12-21",
+      "2020-12-22",
+      "2020-12-23",
+      "2020-12-24",
+      "2020-12-25",
+      "2020-12-26",
+      "2020-12-27",
+      "2020-12-28",
+      "2020-12-29",
+      "2020-12-30",
+      "2020-12-31",
+      "2021-01-01",
+      "2021-01-02",
+      "2021-01-03",
+      "2021-01-04",
+      "2021-01-05",
+      "2021-01-06",
+      "2021-01-07",
+      "2021-01-08",
+      "2021-01-09",
+      "2021-01-10",
+      "2021-01-11",
+      "2021-01-12",
+      "2021-01-13",
+      "2021-01-14",
+      "2021-01-15",
+      "2021-01-16",
+      "2021-01-17",
+      "2021-01-18",
+      "2021-01-19",
+      "2021-01-20",
+      "2021-01-21",
+      "2021-01-22",
+      "2021-01-23",
+      "2021-01-24",
+      "2021-01-25"
+    ],
+    "eligible_8_of_8_run_lengths": [
+      64
+    ],
+    "eligible_8_of_8_longest_run": 64,
+    "local_hour_missingness": {
+      "00": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "01": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "02": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "03": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "04": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "05": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "06": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "07": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "08": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "09": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "10": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "11": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "12": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "13": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "14": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "15": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "16": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "17": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "18": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "19": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "20": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "21": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "22": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      },
+      "23": {
+        "expected_bins_in_source_span": 65,
+        "valid_bins": 65,
+        "missing_or_invalid_bins": 0
+      }
+    },
+    "local_date_coverage": [
+      {
+        "local_date": "2020-11-22",
+        "expected_hour_bins_within_source_span": 12,
+        "valid_hour_bins_within_source_span": 12,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 5,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": false,
+        "eligible_8_of_8": false,
+        "deployment_boundary_date": true
+      },
+      {
+        "local_date": "2020-11-23",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-11-24",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-11-25",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-11-26",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-11-27",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-11-28",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-11-29",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-11-30",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-01",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-02",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-03",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-04",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-05",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-06",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-07",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-08",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-09",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-10",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-11",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-12",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-13",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-14",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-15",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-16",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-17",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-18",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-19",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-20",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-21",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-22",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-23",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-24",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-25",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-26",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-27",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-28",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-29",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-30",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2020-12-31",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-01",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-02",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-03",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-04",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-05",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-06",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-07",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-08",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-09",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-10",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-11",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-12",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-13",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-14",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-15",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-16",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-17",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-18",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-19",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-20",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-21",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-22",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-23",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-24",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-25",
+        "expected_hour_bins_within_source_span": 24,
+        "valid_hour_bins_within_source_span": 24,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 8,
+        "night_window_valid_hours": 8,
+        "eligible_6_of_8": true,
+        "eligible_8_of_8": true,
+        "deployment_boundary_date": false
+      },
+      {
+        "local_date": "2021-01-26",
+        "expected_hour_bins_within_source_span": 12,
+        "valid_hour_bins_within_source_span": 12,
+        "missing_or_invalid_hour_bins_within_source_span": 0,
+        "day_window_valid_hours": 3,
+        "night_window_valid_hours": 0,
+        "eligible_6_of_8": false,
+        "eligible_8_of_8": false,
+        "deployment_boundary_date": true
+      }
+    ],
+    "duplicate_or_dst_fold_local_hour_collision_count": 0
+  },
   "prohibited_analysis_check": {
-    "daily_pairs_created": false,
+    "paired_date_eligibility_screened": true,
+    "paired_outcome_values_created": false,
     "day_night_values_compared": false,
     "effect_or_interval_or_p_value_or_power_computed": false
   },
@@ -156,6 +1204,7 @@
     "executable": "/Users/jinshenhui/miniforge3/envs/nussem1/bin/python",
     "platform": "macOS-15.5-arm64-arm-64bit",
     "conda": "conda 25.9.1",
-    "pyyaml": "6.0.2"
+    "pyyaml": "6.0.2",
+    "h5py": "3.14.0"
   }
 }

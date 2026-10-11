@@ -1,5 +1,6 @@
 {
   "retrieval_time_utc": "2026-10-10T08:24:32Z",
+  "phase_0_5_netcdf_retrieved_utc": "2026-10-11T17:37:13Z",
   "doi": "https://doi.org/10.25921/yyt5-g930",
   "official_landing_page": "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncei.pad:NOAA-Navy-SanctSound_SB02_13_BB_1h",
   "official_bucket_listing": "https://storage.googleapis.com/noaa-passive-bioacoustic/?prefix=sanctsound/products/sound_level_metrics/sb02/sanctsound_sb02_13_bb_1h/",
@@ -31,8 +32,31 @@
       "gcs_generation": "1668860912846341",
       "gcs_last_modified_utc": "2022-11-19T12:28:32.875Z",
       "gcs_etag": "0f15fdce1abb11e7880b30615d75e9b6"
+    },
+    {
+      "url": "https://storage.googleapis.com/noaa-passive-bioacoustic/sanctsound/products/sound_level_metrics/sb02/sanctsound_sb02_13_bb_1h/data/SanctSound_SB02_13_BB_1h.nc",
+      "local_path": "data/raw/SanctSound_SB02_13_BB_1h.nc",
+      "size_bytes": 132286,
+      "sha256": "6f9f0211a98f415cd2c26526ec7bae9788bc3401b5ad707b7a9a7882609fba03",
+      "gcs_generation": "1668860866794029",
+      "gcs_last_modified_utc": "2022-11-19T12:27:46.822Z",
+      "gcs_etag": "c66bf14248209b80f32c94078e320d59",
+      "purpose": "Inspect this exact product's netCDF time coordinate, license, and measurement attributes."
     }
   ],
-  "license_note": "The NOAA landing record supplies attribution and liability terms but no explicit open license or redistribution grant was verified. Raw files remain local and Git-ignored; redistribution clearance is unresolved.",
+  "sources_consulted": [
+    "https://www.ncei.noaa.gov/access/metadata/landing-page/bin/iso?id=gov.noaa.ncei.pad:NOAA-Navy-SanctSound_SB02_13_BB_1h",
+    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/noaaSanctSound_MB02_04_BB_1h.html",
+    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/noaaSanctSound_SB02_15_PSD_1h.graph",
+    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/noaaSanctSound_SB02_13_BB_1h.das",
+    "https://coastwatch.pfeg.noaa.gov/erddap/griddap/noaaSanctSound_SB02_13_BB_1h.html",
+    "https://github.com/MarineBioAcousticsRC/Triton/tree/master/Remoras/Soundscape-Metrics"
+  ],
+  "license_note": "The exact SB02_13 netCDF global license attribute states that the data may be used and redistributed for free, with a no-warranty/legal-use disclaimer. This is dataset-specific redistribution permission, though not a named CC/OSI license. Small processed data and metadata snapshots are included in the repository; no raw audio is included.",
+  "metadata_resolution": {
+    "timestamp": "Direct product-specific netCDF attributes on both time and time_stamp say: Start time of 1 hour bin over which sound pressure levels are calculated.",
+    "frequency_band": "NCEI ISO metadata, the product netCDF abstract/history, and the BB_10-24000 field name say 10-24,000 Hz; the companion brief JSON DATA_QUALITY field says 20-24,000 Hz. Conflict remains unresolved pending NOAA clarification.",
+    "erddap_access": "Direct SB02_13 ERDDAP .das request returned HTTP 403: IP address on request blacklist. The two related ERDDAP product pages were accessible and are indirect corroboration only."
+  },
   "reacquisition_note": "Re-download the exact public bucket objects from the URLs above and verify SHA-256. The bucket listing exposed GCS generations and ETags; ordinary object URLs may serve a changed object if NOAA replaces it."
 }

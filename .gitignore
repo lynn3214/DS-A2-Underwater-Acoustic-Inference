@@ -4,4 +4,9 @@ __pycache__/
 .ipynb_checkpoints/
 data/raw/*
 !data/raw/README.md
+# The NOAA product's own netCDF license metadata explicitly permits free redistribution.
+!data/raw/SanctSound_SB02_13_BB_1h.csv
+!data/raw/SanctSound_SB02_13_BB_1h.nc
+!data/raw/NOAA-Navy-SanctSound_SB02_13_BB_1h.xml
+!data/raw/SanctSound_SB02_13_BB_1h-metadata.json
 results/audit/figures/

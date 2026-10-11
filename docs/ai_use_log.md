@@ -17,3 +17,13 @@
 - Rejected recommendations: none recorded.
 - Human review: pending; no independent reviewer has verified the audit yet.
 - Independent verification: eight synthetic tests passed on the final run; they verify implementation behavior only and are not independent validation of NOAA metadata or the analysis design.
+
+## Phase 0.5 metadata resolution
+
+- Tool: OpenAI Codex.
+- Task: Inspect direct product metadata and user-specified related NOAA records; complete coverage under the newly justified timestamp convention.
+- Accepted recommendation: the exact SB02_13 netCDF coordinate comment is direct product-specific evidence for bin starts; related products are labelled indirect.
+- Accepted recommendation: preserve frequency conflict and report conditional feasibility pending clarification.
+- Rejected recommendations: none recorded.
+- Human review: pending independent review; no human verification is claimed.
+- Independent verification: pending. Synthetic tests validate implementation behavior but do not independently verify the NOAA source record.

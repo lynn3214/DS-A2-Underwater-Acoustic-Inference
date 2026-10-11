@@ -1,0 +1,35 @@
+phase: 0.5
+status: metadata_resolved_coverage_audit
+based_on_protocol: config/audit_protocol.yaml
+candidate:
+  source: NOAA SanctSound
+  doi: https://doi.org/10.25921/yyt5-g930
+  site: Stellwagen Bank
+  station_deployment: SB02_13
+  product: hourly broadband sound-pressure-level indicators
+windows:
+  timezone: America/New_York
+  timezone_basis: User-specified IANA timezone, consistent with the station coordinates in NOAA metadata.
+  timestamp_semantics: start
+  timestamp_semantics_basis: Direct SB02_13 netCDF attributes on both time and time_stamp state "Start time of 1 hour bin over which sound pressure levels are calculated".
+  timestamp_semantics_confidence: high
+  day:
+    start: "09:00"
+    end_exclusive: "17:00"
+    hours: 8
+  night:
+    start: "21:00"
+    end_exclusive_next_day: "05:00"
+    hours: 8
+    assign_to: starting_local_calendar_date
+eligibility:
+  main_min_valid_hours_each_window: 6
+  strict_coverage_min_valid_hours_each_window: 8
+  target_paired_dates: 30
+  eligible_dates_by_calendar_contiguity: split_runs_at_any_missing_or_ineligible_date
+prohibitions:
+  calculate_day_night_effect: false
+  calculate_confidence_intervals: false
+  calculate_p_values: false
+  calculate_power: false
+  outcome_based_selection: false
