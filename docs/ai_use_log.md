@@ -50,3 +50,10 @@
 - PDF validation: Ghostscript extraction/rendering and visual inspection of all ten pages found no layout defects; pixel comparison showed the regenerated and prior renders identical. This AI-assisted inspection is not independent human verification.
 - Human review: pending. Codex has not represented student review, external review, or course submission as completed.
 - Remaining independent checks: scientific/design review of dependence assumptions and thresholds; NOAA confirmation of the lower frequency-edge discrepancy and absent record-level QC; course-summary approval and final submission decision.
+
+## Independent student verification — 2026-10-12
+
+- Verifier: the student, reporting their own execution.
+- Action: restarted the Jupyter kernel and ran all 11 code cells in the existing `nussem1` environment.
+- Student-reported result: all 11 cells completed successfully, and the results matched the committed version.
+- This student execution is separate from Codex's subsequent comparison of the saved notebook outputs against the committed notebook. Codex found that, after excluding the revised first Markdown cell, code, execution counts, visible outputs, and embedded figures matched; no error outputs were present. This comparison did not independently rerun the Notebook or verify the student's local kernel session.

@@ -25,8 +25,10 @@ markdown("""# DS-A2 — Statistical Inference and Uncertainty
 
 **Day–Night Variability in Underwater Sound Levels: Statistical Inference, Power, and Temporal Dependence**
 
-This notebook analyzes the NOAA SanctSound SB02_13 hourly broadband sound-level indicator. It separates observed data from controlled simulations and makes no causal claim about night, vessels, animals, or other sources. Run every cell from top to bottom in the existing `nussem1` environment. The frozen design is in `config/experiment_protocol.yaml`; implementation functions are in `src/inference.py` and orchestration is in `src/run_phase1.py`.
-""")
+This notebook analyzes the NOAA SanctSound SB02_13 hourly broadband sound-level indicator. It separates observed data from controlled simulations and makes no causal claims about nighttime, vessels, marine animals, or other potential sound sources.
+
+Run all cells sequentially from a clean Jupyter kernel using a Python environment with the dependencies documented in the repository. The frozen experimental design is specified in `config/experiment_protocol.yaml`, with statistical methods implemented in `src/inference.py` and experiment orchestration in `src/run_phase1.py`.
+""".rstrip("\n"))
 
 markdown("""## 1. Research question and estimand
 
