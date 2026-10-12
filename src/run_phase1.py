@@ -176,7 +176,8 @@ def run_all() -> dict:
     write_figures(eligible, differences, descriptive, methods, acf_rows, sampling_conditions,
                   sampling_values, power_rows, ar_summaries)
     runtime = {
-        "python": sys.version, "python_executable": sys.executable,
+        "python": sys.version,
+        "python_executable": "Python interpreter from the active nussem1 Conda environment",
         "conda": subprocess.run(["conda", "--version"], check=True, capture_output=True, text=True).stdout.strip(),
         "platform": platform.platform(), "numpy": np.__version__, "pandas": pd.__version__,
         "scipy": scipy.__version__, "matplotlib": matplotlib.__version__,

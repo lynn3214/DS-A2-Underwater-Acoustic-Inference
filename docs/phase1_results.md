@@ -50,7 +50,7 @@ Phase 0.5 remains historically **CONDITIONAL PASS**. Direct netCDF/NCEI evidence
 
 ## Execution evidence
 
-- Environment: `/Users/jinshenhui/miniforge3/envs/nussem1/bin/python`, Python 3.10.18, Conda 25.9.1, macOS 15.5 arm64; NumPy 2.2.6, SciPy 1.15.2, pandas 2.3.1, matplotlib 3.10.5, PyYAML 6.0.2, Jupyter 1.1.1, nbconvert 7.16.6. No dependencies were installed.
+- Environment: Python interpreter from the active `nussem1` Conda environment, Python 3.10.18, Conda 25.9.1, macOS 15.5 arm64; NumPy 2.2.6, SciPy 1.15.2, pandas 2.3.1, matplotlib 3.10.5, PyYAML 6.0.2, Jupyter 1.1.1, nbconvert 7.16.6. No dependencies were installed.
 - Tests: `python -m unittest discover -s tests -v` — final suite 26 passed.
 - Pipeline: `python src/run_phase1.py` — completed, exit 0; it generated data, tables, figures and the PDF after the analytical-tail correction.
 - Notebook: `jupyter nbconvert --to notebook --execute --inplace --ExecutePreprocessor.timeout=1200 notebook/DS_A2_inference_uncertainty.ipynb` — clean-kernel execution succeeded and saved outputs. Permission to bind local kernel sockets was required. Final executed notebook contains no error outputs.
@@ -59,4 +59,10 @@ Phase 0.5 remains historically **CONDITIONAL PASS**. Direct netCDF/NCEI evidence
 
 ## Independent reproduction
 
-From repository root, activate `nussem1`, run `python -m unittest discover -s tests -v`, `python src/run_phase1.py`, `python src/build_notebook.py`, then the `jupyter nbconvert` command above. Full grids, seeds, and method definitions are frozen in `config/experiment_protocol.yaml`. Review `docs/ai_use_log.md` and `docs/decision_log.md` before changing methods.
+From repository root, activate the existing environment with the exact commands below, then run `python -m unittest discover -s tests -v`, `python src/run_phase1.py`, `python src/build_notebook.py`, and the `jupyter nbconvert` command listed above. Full grids, seeds, and method definitions are frozen in `config/experiment_protocol.yaml`. Review `docs/ai_use_log.md` and `docs/decision_log.md` before changing methods.
+
+```bash
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate nussem1
+python -c "import sys; print(sys.executable); print(sys.version)"
+```

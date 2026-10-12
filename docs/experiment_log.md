@@ -31,7 +31,15 @@
 ## 2026-10-12 — Phase 1 protocol freeze and execution
 
 - Frozen prospective design in `config/experiment_protocol.yaml` and `docs/analysis_plan.md`; commit `33261148bbcfb2a4f6e9ff27286c5f962e323138` precedes outcome computation. Source SHA-256 was checked against the frozen protocol before creating daily differences.
-- Environment verified as `/Users/jinshenhui/miniforge3/envs/nussem1/bin/python`, Python 3.10.18, Conda 25.9.1, macOS 15.5 arm64. Runtime packages were NumPy 2.2.6, SciPy 1.15.2, pandas 2.3.1, matplotlib 3.10.5, PyYAML 6.0.2, Jupyter 1.1.1, nbconvert 7.16.6. Statsmodels and PDF inspection utilities `pdfinfo`/`pdftotext` are absent; no package was installed. HAC uses its explicitly stated formula.
+- Environment verified: Python interpreter from the active `nussem1` Conda environment, Python 3.10.18, Conda 25.9.1, macOS 15.5 arm64. Runtime packages were NumPy 2.2.6, SciPy 1.15.2, pandas 2.3.1, matplotlib 3.10.5, PyYAML 6.0.2, Jupyter 1.1.1, nbconvert 7.16.6. Statsmodels and PDF inspection utilities `pdfinfo`/`pdftotext` are absent; no package was installed. HAC uses its explicitly stated formula.
+
+  Reproduce the environment activation from repository root:
+
+  ```bash
+  source "$(conda info --base)/etc/profile.d/conda.sh"
+  conda activate nussem1
+  python -c "import sys; print(sys.executable); print(sys.version)"
+  ```
 - Initial Phase 1 unit run: 23 tests, 1 failure. The finite-series ACF validation tolerance was too tight for n=80 due to expected demeaning bias; revised fixture length to 300. Subsequent suite: 24 tests passed.
 - First analysis launch failed before reading data because of a smart-quote syntax typo in the plotting title. Corrected it. The next launch identified whitespace around the CSV's second header and a non-writable default Matplotlib cache; the reader now trims header fields and cache is repository-local/ignored.
 - First full numerical run revealed SciPy returned NaN for one lower-tail noncentral-t CDF at a valid high-noncentrality power setting (sigma multiplier .5). Preserved this negative finding in development history and implemented a stable exact chi-square-mixture tail integral for non-finite direct results; the regression test now verifies finite power in that regime.
