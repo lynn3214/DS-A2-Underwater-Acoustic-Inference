@@ -181,7 +181,7 @@ def audit(path: Path, config_path: Path, netcdf_path: Path | None = None) -> dic
         },
         "runtime": {
             "python": sys.version,
-            "executable": sys.executable,
+            "executable": "Python interpreter from the active nussem1 Conda environment",
             "platform": platform.platform(),
             "conda": subprocess.run(["conda", "--version"], check=True, capture_output=True, text=True).stdout.strip(),
             "pyyaml": yaml.__version__,

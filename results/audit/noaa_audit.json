@@ -1201,7 +1201,7 @@
   },
   "runtime": {
     "python": "3.10.18 | packaged by conda-forge | (main, Jun  4 2025, 14:46:00) [Clang 18.1.8 ]",
-    "executable": "/Users/jinshenhui/miniforge3/envs/nussem1/bin/python",
+    "executable": "Python interpreter from the active nussem1 Conda environment",
     "platform": "macOS-15.5-arm64-arm-64bit",
     "conda": "conda 25.9.1",
     "pyyaml": "6.0.2",

@@ -39,3 +39,14 @@
 - Human review: pending. No student, instructor, or external reviewer is claimed to have verified results.
 - Independent verification: not performed. Automated testing and clean-kernel execution establish code-path reproducibility, not independent scientific review of the estimand, NOAA metadata, or interpretation.
 - Review items: NOAA clarification of the 10 vs 20 Hz lower edge; absent record-level QC; adequacy of the frozen HAC bandwidth/reference; MBB block-length limitations; single short deployment; and appropriateness of the operational 3 dB threshold.
+
+## Phase 2 final quality assurance
+
+- Tool: OpenAI Codex.
+- Task: inspect the existing project and perform final automated, numerical-consistency, clean-kernel, PDF, documentation, and repository hygiene checks without changing the frozen scientific design.
+- Accepted actions: document the YAML/source parameter mapping; add six automated checks comparing saved outputs and observed-data reference calculations to the frozen protocol; complete README reproduction instructions; generalize unnecessary historical local interpreter paths; preserve notebook execution evidence.
+- Rejected/omitted actions: no source-level parameter refactor because existing outputs matched the frozen values and changing execution plumbing was not necessary for QA; no protocol or result changes; no package installation.
+- Automated verification: the final `nussem1` suite passed 33 tests; notebook clean-kernel command exited 0 with 11 code cells executed and zero errors; JSON/YAML/CSV/notebook structure checks and Git whitespace/security/path scans are recorded in `docs/final_qa_report.md`.
+- PDF validation: Ghostscript extraction/rendering and visual inspection of all ten pages found no layout defects; pixel comparison showed the regenerated and prior renders identical. This AI-assisted inspection is not independent human verification.
+- Human review: pending. Codex has not represented student review, external review, or course submission as completed.
+- Remaining independent checks: scientific/design review of dependence assumptions and thresholds; NOAA confirmation of the lower frequency-edge discrepancy and absent record-level QC; course-summary approval and final submission decision.

@@ -18,7 +18,7 @@ The statistic is the arithmetic mean of each date's night-minus-day means of pub
 | MBB, block 4 | [−0.542, 1.228] | Not calculated | Primary `ceil(64^(1/3))` heuristic |
 | MBB, block 8 | [−0.431, 1.246] | Not calculated | Block-length sensitivity |
 
-All intervals include zero and 1 dB, and all exclude +3 dB. The parametric p-values do not show a statistically significant average contrast at alpha=.05. The estimate is below both operational thresholds. These statements are conditional on the metric, inclusion rule, and inference assumptions; the contrast is not causal. The thresholds are not universal NOAA or ecological standards.
+All intervals include zero and 1 dB, and all exclude +3 dB. The parametric p-values do not show a statistically significant average contrast at alpha=.05. The estimate is below both operational thresholds. An interval containing zero does not establish that the true contrast is zero; the interval remains compatible with positive and negative values. A 95% confidence interval describes long-run coverage under its method assumptions, not a 95% probability statement about the fixed contrast. These statements are conditional on the metric, inclusion rule, and inference assumptions; the contrast is not causal. The thresholds are not universal NOAA or ecological standards.
 
 ## Real-data temporal dependence
 

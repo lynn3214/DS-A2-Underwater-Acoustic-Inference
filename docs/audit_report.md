@@ -29,7 +29,7 @@ The detailed evidence classes and exact URLs are in [`metadata_evidence.json`](.
 
 ## Phase 0.5 test and reproduction record
 
-All tests were run with `/Users/jinshenhui/miniforge3/envs/nussem1/bin/python` (Python 3.10.18, Conda 25.9.1, PyYAML 6.0.2, h5py 3.14.0). The final synthetic test suite covers bin label assignment, half-open boundaries, cross-midnight attribution, UTC/local conversion, spring-forward and fall-back DST behavior, 6/8 and 8/8 screening, duplicate/invalid records, missing-date runs, and coverage counts.
+All tests were run with the Python interpreter from the active `nussem1` Conda environment (Python 3.10.18, Conda 25.9.1, PyYAML 6.0.2, h5py 3.14.0). The final synthetic test suite covers bin label assignment, half-open boundaries, cross-midnight attribution, UTC/local conversion, spring-forward and fall-back DST behavior, 6/8 and 8/8 screening, duplicate/invalid records, missing-date runs, and coverage counts.
 
 ```bash
 source "$(conda info --base)/etc/profile.d/conda.sh"
@@ -76,7 +76,7 @@ Overall SPL values (without day/night comparison) range from 87.726289 to 117.73
 
 ## Reproduction and tests
 
-Python work used the existing `nussem1` environment. Verified interpreter: `/Users/jinshenhui/miniforge3/envs/nussem1/bin/python`; Python 3.10.18; Conda 25.9.1; PyYAML 6.0.2; macOS 15.5 arm64. No random seeds were needed because the audit is deterministic and contains no simulation.
+Python work used the existing `nussem1` environment. The verified interpreter was the environment's active Python; Python 3.10.18; Conda 25.9.1; PyYAML 6.0.2; macOS 15.5 arm64. No random seeds were needed because the audit is deterministic and contains no simulation. The original machine-specific interpreter string has been generalized for repository portability; the environment and version record is retained.
 
 ```bash
 source "$(conda info --base)/etc/profile.d/conda.sh"

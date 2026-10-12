@@ -1,0 +1,56 @@
+{
+  "reviewed_commit": "c45a0f3d8a6c8f0ec48257adb7ac04406d2533be",
+  "execution_status": "success",
+  "exit_code": 0,
+  "execution_datetime_utc": "2026-10-12T01:32:39.080919+00:00",
+  "environment": "nussem1",
+  "command": "jupyter nbconvert --to notebook --execute --ExecutePreprocessor.timeout=1200 notebook/DS_A2_inference_uncertainty.ipynb --output /tmp/DS_A2_inference_uncertainty_executed.ipynb",
+  "notebook_sha256": "b76648854bc3e1a7983226a3f7e2fc1c431c58f0122a07fffcda782f3281598a",
+  "code_cell_execution": [
+    {
+      "cell_index": 4,
+      "execution_count": 1
+    },
+    {
+      "cell_index": 6,
+      "execution_count": 2
+    },
+    {
+      "cell_index": 9,
+      "execution_count": 3
+    },
+    {
+      "cell_index": 10,
+      "execution_count": 4
+    },
+    {
+      "cell_index": 13,
+      "execution_count": 5
+    },
+    {
+      "cell_index": 14,
+      "execution_count": 6
+    },
+    {
+      "cell_index": 17,
+      "execution_count": 7
+    },
+    {
+      "cell_index": 18,
+      "execution_count": 8
+    },
+    {
+      "cell_index": 21,
+      "execution_count": 9
+    },
+    {
+      "cell_index": 22,
+      "execution_count": 10
+    },
+    {
+      "cell_index": 25,
+      "execution_count": 11
+    }
+  ],
+  "error_outputs": []
+}

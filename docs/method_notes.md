@@ -8,6 +8,8 @@ For eligible local date `d`, compute arithmetic means over published hourly soun
 
 Let `s^2 = sum((D_d - mean(D))^2)/(n-1)`. The standard error is `s/sqrt(n)`; the 95% interval is `mean(D) +/- t_(0.975,n-1)*s/sqrt(n)`. The two-sided test uses `t=mean(D)/(s/sqrt(n))`. Exact small-sample t calibration requires independent Gaussian daily differences; independence is not guaranteed by a contiguous date series.
 
+A 95% confidence interval describes the long-run coverage of the stated procedure under its assumptions; it does not mean that a fixed `Delta` has 95% probability of lying in this realized interval. An interval containing zero does not establish that `Delta=0`.
+
 ## Newey-West HAC
 
 For demeaned residuals `e_t`, use Bartlett weights `w_k=1-k/(L+1)` and `gamma_k=n^-1 sum_(t=k+1)^n e_t e_(t-k)`. The long-run variance estimate is `gamma_0 + 2 sum_(k=1)^L w_k gamma_k`. The variance of the mean divides this by n and applies scalar correction `n/(n-1)`. The frozen rule is `L=floor(4*(n/100)^(2/9))`, which gives L=3 at n=64. The interval uses a t reference with n−1 degrees of freedom as frozen. This is an asymptotic approximation; size and bandwidth sensitivity at n=64 are limitations.

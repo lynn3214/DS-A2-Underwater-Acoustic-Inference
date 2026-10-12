@@ -78,7 +78,7 @@ pd.Series(eligible_summary, name="value").to_frame()
 """)
 
 markdown("## 5. Observed-data inference")
-markdown("The three families target the same mean paired difference but encode different dependence assumptions. HAC intervals at n=64 are approximate, not guaranteed calibrated; MBB sensitivity to block size is shown explicitly.")
+markdown("The three families target the same mean paired difference but encode different dependence assumptions. HAC intervals at n=64 are approximate, not guaranteed calibrated; MBB sensitivity to block size is shown explicitly. A 95% confidence interval describes the procedure's long-run coverage under its assumptions; it does not assign 95% probability to a fixed Delta. An interval containing zero does not establish that Delta equals zero.")
 code("""from IPython.display import display
 display(pd.DataFrame([results["descriptive"]]).T.rename(columns={0: "observed value"}))
 display(pd.DataFrame(results["methods"])[["method", "mean", "lower", "upper", "p_value"]])
