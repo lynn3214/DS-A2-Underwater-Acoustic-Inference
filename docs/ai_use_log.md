@@ -57,3 +57,51 @@
 - Action: restarted the Jupyter kernel and ran all 11 code cells in the existing `nussem1` environment.
 - Student-reported result: all 11 cells completed successfully, and the results matched the committed version.
 - This student execution is separate from Codex's subsequent comparison of the saved notebook outputs against the committed notebook. Codex found that, after excluding the revised first Markdown cell, code, execution counts, visible outputs, and embedded figures matched; no error outputs were present. This comparison did not independently rerun the Notebook or verify the student's local kernel session.
+
+## ChatGPT research assistance and AI-assisted review
+
+- Tool: OpenAI ChatGPT.
+- Model and effort: GPT-6; the student reports the interface label **Luna** and **Medium** thinking effort for this conversation. These UI labels are recorded as student-reported configuration, not independently verified model metadata.
+- Scope: research planning, methodology discussion, Codex task specification, critique of reported and available source-code results, deliverable review, and submission guidance. ChatGPT did not implement or execute the full experiment in the student's local environment.
+
+### Assignment interpretation and research planning
+
+- Task: Interpret the DS-A2 requirements and compare candidate research settings, including the previous robotics dataset and real underwater-acoustics observations.
+- Accepted advice: use NOAA SanctSound SB02_13 as the candidate for a real-data scientific question; pair day and night windows by local date; separate the observational sound-level contrast from controlled simulation and methodological validation.
+- Rejected/deferred alternative: reusing the DS-A1 robotics dataset solely for project continuity.
+- Methodological clarification: the estimand concerns arithmetic means of published hourly dB indicators, not linear acoustic-energy means; the observational comparison does not establish causal effects.
+
+### Analysis design and methodological choices
+
+- Task: Help define the research question, daily paired-difference estimand, null and alternative hypotheses, operational meaningful-effect thresholds, sampling-distribution simulation, power analysis, and the AR(1) assumption-violation counterexample.
+- Accepted advice: prespecify selection and analysis rules; preserve meaningful failures and negative findings; compare IID t inference against HAC and moving block bootstrap (MBB); overlay analytical and Monte Carlo power under an IID Gaussian model; examine real-data ACF without treating estimated correlation as a known parameter.
+- Modified advice: use 3 dB as a *prespecified operational* meaningful-effect threshold, with 1 dB as a sensitivity reference, rather than claiming a universal NOAA or ecological threshold. Treat MBB block length and HAC bandwidth as specified methods with finite-sample limitations, not guaranteed corrections.
+- Rejected/deferred suggestions: additional empirical-residual resampling and unrestricted sign-flip permutation (extra complexity and dependence assumptions); astronomical sunrise/sunset sensitivity analysis (outside the fixed-clock-time primary estimand; discussed as a limitation).
+
+### Phase 0 / 0.5 guidance and review
+
+- Task: Draft instructions for the Codex feasibility audit, review the reported data-source and timestamp ambiguities, and request targeted additional metadata checks before scientific analysis.
+- Accepted advice: stop outcome-dependent analysis until the hourly time-bin semantics could be justified; distinguish product-specific NOAA netCDF evidence from indirect evidence from related products; retain the 10-versus-20 Hz frequency-edge discrepancy and missing per-record QC as limitations.
+- Review scope: ChatGPT considered audit reports and, in subsequent repository review, source-code and saved-result consistency. Codex, not ChatGPT, executed the NOAA audit and synthetic tests.
+
+### Phase 1 / 2 review and final-deliverable checks
+
+- Task: Review the reported NOAA inference, power and AR(1) counterexample, examine relevant implementation and saved results, identify maintainability and interpretation issues, and propose a narrow final QA scope.
+- Numerical cross-check: the reported standard deviation (approximately 3.123 dB) and sample size (64) imply an IID standard error of approximately 0.390 dB, consistent with the reported IID interval and p-value.
+- Interpretation advice: a confidence interval containing zero does not prove zero effect; inflated AR(1) rejection under a true null reflects Type I error, not superior power; HAC and MBB may still under-cover in dependent finite samples.
+- Accepted/retained limitation: document duplicate YAML/source parameter values and test consistency rather than refactoring validated scientific computation late in the project.
+- PDF review: ChatGPT visually inspected the supplied ten-page Phase 1 PDF, including the effect/CI, sampling-distribution, power and counterexample figures, and found no obvious page clipping, overlapping elements, or missing figures. This was AI-assisted inspection, not independent human visual sign-off.
+- Documentation advice: make the notebook introduction portable by referencing a Python environment with documented dependencies rather than requiring the reader's environment to have the student's local name; synchronize the introduction with the notebook-generation template, while preserving the actual `nussem1` environment in execution/provenance records.
+
+### Verification boundary
+
+- ChatGPT provided methodological reasoning, selected hand calculations, repository/source review, document feedback, and AI-assisted PDF inspection. It did not independently run the complete notebook, test suite, NOAA retrieval, or Monte Carlo study in the student's `nussem1` environment.
+- Codex implementation and internal checks are recorded in the phase-specific entries above; the student's separate clean-kernel execution is recorded in the **Independent student verification** section.
+- The source review and PDF assessment are not a guarantee of correctness. Responsibility for approving the final interpretation and submission remains with the student.
+
+## Verification status at final-log preparation
+
+- The earlier phase-specific statements of **human review pending** are historical status statements recorded when those phases finished; they should not be retroactively rewritten.
+- On 2026-10-12, the student reported a successful personal clean-kernel run of all 11 code cells and matching outputs. This is the scope of the student verification presently documented.
+- Codex subsequently compared the notebook outputs with the committed version; ChatGPT provided separate AI-assisted design, source/result, and PDF review. Neither is represented as an instructor's or a separate human expert's endorsement.
+- Remaining scientific limitations are documented elsewhere in the repository, including the frequency-edge metadata conflict, absent row-level QC, a single short deployment, and method limitations under temporal dependence.
