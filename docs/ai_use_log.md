@@ -27,3 +27,15 @@
 - Rejected recommendations: none recorded.
 - Human review: pending independent review; no human verification is claimed.
 - Independent verification: pending. Synthetic tests validate implementation behavior but do not independently verify the NOAA source record.
+
+## Phase 1 statistical analysis and deliverables
+
+- Tool: OpenAI Codex.
+- Task: freeze a prospective design before outcome analysis; implement aggregation, inference, IID simulations, AR(1) counterexamples, figures, notebook, PDF, tests, and documentation.
+- Accepted recommendations: validate the source checksum and 6/8 and 8/8 counts against Phase 0.5; report an MBB percentile interval without inventing a p-value; numerically integrate the noncentral-t representation when SciPy's direct lower-tail CDF returns NaN.
+- Modified/rejected recommendations: Statsmodels was absent, so HAC was implemented from its explicit Newey–West formula and tested directly instead of installing a dependency. An initial AR(1) ACF tolerance was too narrow for n=80; validation was changed to n=300 to account for finite-length centering bias. Operational interpretation thresholds were taken as 3 dB and 1 dB from the explicit Phase 1 task.
+- Automated verification actually run: 24 unit/Monte Carlo tests passed; full pipeline completed; final clean-kernel notebook execution saved outputs. Jupyter needed permission to bind its local kernel sockets. Detailed failures and fixes are in `docs/experiment_log.md`.
+- Numerical verification: observed eligibility matched Phase 0.5 at 64 dates under both coverage rules; t inference matched SciPy; noncentral-t power matched a Monte Carlo check; AR(1) mean, variance, and lag-one properties were checked over 30,000 series; source checksum was verified before analysis.
+- Human review: pending. No student, instructor, or external reviewer is claimed to have verified results.
+- Independent verification: not performed. Automated testing and clean-kernel execution establish code-path reproducibility, not independent scientific review of the estimand, NOAA metadata, or interpretation.
+- Review items: NOAA clarification of the 10 vs 20 Hz lower edge; absent record-level QC; adequacy of the frozen HAC bandwidth/reference; MBB block-length limitations; single short deployment; and appropriateness of the operational 3 dB threshold.

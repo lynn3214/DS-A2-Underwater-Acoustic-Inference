@@ -1,0 +1,84 @@
+{
+  "source_sha256": "678ccabf720dfb1880b2d5975dee417dda118c66929f0e8d000dc9043c4d1cb2",
+  "descriptive": {
+    "eligible_primary_dates": 64,
+    "eligible_strict_dates": 64,
+    "eligible_date_range": [
+      "2020-11-23",
+      "2021-01-25"
+    ],
+    "contiguous_runs": [
+      64
+    ],
+    "mean_difference_db": 0.35213725000000173,
+    "median_difference_db": 0.634543687499999,
+    "sample_sd_ddof1_db": 3.1231548561050446,
+    "standard_error_db": 0.3903943570131306,
+    "minimum_difference_db": -7.765208250000001,
+    "maximum_difference_db": 7.008544749999999,
+    "minimum_meaningful_threshold_db": 3.0,
+    "secondary_interpretation_threshold_db": 1.0
+  },
+  "methods": [
+    {
+      "method": "IID one-sample t",
+      "n": 64,
+      "mean": 0.35213725000000173,
+      "sd": 3.1231548561050446,
+      "se": 0.3903943570131306,
+      "lower": -0.4280036211906534,
+      "upper": 1.132278121190657,
+      "statistic": 0.902003944662955,
+      "p_value": 0.37049044565483136,
+      "df": 63
+    },
+    {
+      "method": "Newey-West HAC",
+      "n": 64,
+      "mean": 0.35213725000000173,
+      "se": 0.45821865389120126,
+      "lower": -0.5635396634100649,
+      "upper": 1.2678141634100684,
+      "statistic": 0.7684917386266267,
+      "p_value": 0.4450663765749986,
+      "df": 63,
+      "max_lag": 3,
+      "kernel": "Bartlett",
+      "finite_sample_factor": 1.0158730158730158
+    },
+    {
+      "method": "Moving block bootstrap L=2",
+      "n": 64,
+      "mean": 0.35213725000000173,
+      "lower": -0.4995044728515604,
+      "upper": 1.1367293200195336,
+      "block_length": 2,
+      "replications": 1999,
+      "p_value": null,
+      "reject_zero_by_interval": false
+    },
+    {
+      "method": "Moving block bootstrap L=4",
+      "n": 64,
+      "mean": 0.35213725000000173,
+      "lower": -0.541926591503904,
+      "upper": 1.2279785708984399,
+      "block_length": 4,
+      "replications": 1999,
+      "p_value": null,
+      "reject_zero_by_interval": false
+    },
+    {
+      "method": "Moving block bootstrap L=8",
+      "n": 64,
+      "mean": 0.35213725000000173,
+      "lower": -0.43134524355468334,
+      "upper": 1.245774030664066,
+      "block_length": 8,
+      "replications": 1999,
+      "p_value": null,
+      "reject_zero_by_interval": false
+    }
+  ],
+  "interpretation": "The MBB uses percentile intervals; no bootstrap p-value was calculated."
+}

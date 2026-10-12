@@ -6,7 +6,8 @@
 - Decisions: user-authorized operational thresholds 3 dB primary and 1 dB sensitivity; two-sided alpha .05; one-sample t baseline; Newey-West Bartlett HAC with frozen bandwidth and correction; percentile MBB with frozen block selection and sensitivity; fixed IID and AR(1) simulation grids, replication counts, seeds, and decision rules. Full details are in `config/experiment_protocol.yaml` and `docs/analysis_plan.md`.
 - Rationale: satisfy the Phase 1 task while avoiding outcome-informed methodological choices. The threshold choices are operational interpretations, not universal acoustic standards.
 - Related commit: to be filled after commit succeeds.
-- No NOAA day/night difference has been calculated as of this design record.
+- Related frozen protocol commit: `33261148bbcfb2a4f6e9ff27286c5f962e323138`.
+- No NOAA day/night difference had been calculated when this protocol commit was created.
 
 ## 2026-10-10 — Freeze Phase 0 audit protocol before NOAA access
 

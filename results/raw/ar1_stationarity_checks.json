@@ -1,0 +1,50 @@
+[
+  {
+    "rho": 0.0,
+    "theoretical_mean": 0.0,
+    "empirical_mean": 0.001321818279422948,
+    "theoretical_variance": 9.754096255212522,
+    "empirical_variance": 9.7534515264034,
+    "theoretical_lag1": 0.0,
+    "empirical_lag1_mean": -0.010639289707165111,
+    "replications": 30000,
+    "series_length": 100,
+    "seed": 20262012
+  },
+  {
+    "rho": 0.3,
+    "theoretical_mean": 0.0,
+    "empirical_mean": 0.000590357625853798,
+    "theoretical_variance": 9.754096255212522,
+    "empirical_variance": 9.759948078297235,
+    "theoretical_lag1": 0.3,
+    "empirical_lag1_mean": 0.28057521146357334,
+    "replications": 30000,
+    "series_length": 100,
+    "seed": 20262013
+  },
+  {
+    "rho": 0.6,
+    "theoretical_mean": 0.0,
+    "empirical_mean": 0.00015422094452657048,
+    "theoretical_variance": 9.754096255212522,
+    "empirical_variance": 9.758981133708634,
+    "theoretical_lag1": 0.6,
+    "empirical_lag1_mean": 0.5714881488940635,
+    "replications": 30000,
+    "series_length": 100,
+    "seed": 20262014
+  },
+  {
+    "rho": 0.9,
+    "theoretical_mean": 0.0,
+    "empirical_mean": -0.006412158207058566,
+    "theoretical_variance": 9.754096255212522,
+    "empirical_variance": 9.760750696621734,
+    "theoretical_lag1": 0.9,
+    "empirical_lag1_mean": 0.8599911872343974,
+    "replications": 30000,
+    "series_length": 100,
+    "seed": 20262015
+  }
+]
