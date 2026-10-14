@@ -15,3 +15,11 @@ The following effective values are fixed in `src/run_phase1.py` (or the called p
 - Seed offsets beyond `seed_root` are assigned in source in a deterministic order. The result CSV/JSON records per-condition and per-series seeds where applicable.
 
 The consistency test validates that the checked-in outputs' grid values, replication counts, seed root, observed sample mean, and IID t interval/p-value agree with the frozen YAML and saved daily data. It does not prove that arbitrary future YAML edits will be consumed by the runner. Moving all duplicated parameters into configuration would be a separate code change and is not part of this QA pass.
+
+## Random-stream reuse disclosure
+
+The eight AR(1) data-generation scenarios each use a distinct scenario seed. Within a scenario, the 2,000 series are generated from that scenario's single sequential RNG stream, and its 2,000 MBB resampling seeds (`scenario_seed + series_id + 1`) are distinct. Across scenarios, the ranges of MBB seed identifiers overlap: 2,029 distinct MBB seed identifiers are reused by more than one scenario. Because the AR(1) scenarios share the same sample size and block length, overlapping seeds produce the same pseudo-random block-index sequences when initialized with the same seed, applied to different scenario data.
+
+This creates dependence among some cross-scenario Monte Carlo comparisons, but does not duplicate the AR(1) data sets or bias a scenario's marginal rejection and coverage estimates. Saved Wilson intervals are marginal by scenario; the project does not report uncertainty intervals for differences between scenarios. No within-scenario MBB seed duplication was found. The seed overlap does not invalidate the existing results and does not require rerunning them for the reported marginal comparisons.
+
+The IID sampling-distribution summary and saved draw table intentionally use the same six condition seeds and regenerate the same normal samples so that numerical summaries and plotted draws describe the same simulated observations; they are not independent simulation replications of one another.

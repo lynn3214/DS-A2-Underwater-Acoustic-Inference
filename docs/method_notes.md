@@ -2,7 +2,7 @@
 
 ## Observed statistic
 
-For eligible local date `d`, compute arithmetic means over published hourly sound-level dB indicators in day `[09:00,17:00)` and night `[21:00,05:00)` (night is assigned to its starting date). The daily observation is `D_d = mean(N_d) - mean(D_d)`. With n eligible dates, the target estimate is `mean(D_d)`. This is an observational within-date contrast. An arithmetic mean of published dB indicators is not the mean linear acoustic energy transformed back to dB.
+For eligible local date `d`, let `\bar{Y}_{d,day}` and `\bar{Y}_{d,night}` be the arithmetic means of the published hourly sound-level dB indicators in the day `[09:00,17:00)` and night `[21:00,05:00)` windows, respectively (night is assigned to its starting date). The daily observation is `D_d = \bar{Y}_{d,night} - \bar{Y}_{d,day}`. With n eligible dates, the target estimate is the mean of the eligible `D_d` values. This is an observational within-date contrast. An arithmetic mean of published dB indicators is not the mean linear acoustic energy transformed back to dB.
 
 ## IID one-sample t baseline
 

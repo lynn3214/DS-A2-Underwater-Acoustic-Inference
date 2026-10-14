@@ -34,3 +34,11 @@
 - Unresolved: exact product brief JSON says 20–24,000 Hz, while the NCEI processing record and netCDF abstract/history say 10–24,000 Hz. Retain the discrepancy and require NOAA clarification.
 - Related commit: this record and its evidence are included in the Phase 0.5 metadata-resolution commit; the exact SHA is reported in the final handoff.
 - Evidence: `docs/metadata_resolution.md`, `results/audit/metadata_evidence.json`, and the updated `results/audit/noaa_audit.json`.
+
+## 2026-10-14 — Protocol commit reference erratum
+
+- This dated erratum supplies commit references omitted from the historical entries above; those entries are preserved as written.
+- Phase 0 feasibility protocol freeze: `aa4394b8474e24798096592870d0c22a1e52e00c`.
+- Phase 0.5 NOAA metadata and coverage resolution: `8276cc4c7bf6a8e9900b42366e672ed2ac5c0a23`.
+- Phase 1 statistical protocol freeze, created before the Phase 1 results commit: `33261148bbcfb2a4f6e9ff27286c5f962e323138`.
+- Git author and committer timestamps are consistent with the chronology recorded in the experiment log and provenance, but are historical repository metadata rather than cryptographic proof of execution time. The audit found no Phase 0.5 timestamp error; no timestamp correction is made here.
